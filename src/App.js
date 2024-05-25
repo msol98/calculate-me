@@ -31,15 +31,15 @@ function App() {
   }
 
   return (
-    <div class='wrapper w-64 mx-auto mt-32 px-6 py-10 rounded'>
-      <div class='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800'>{displayedNum}</div>
-      <div class='flex gap-4'>
-        <div class='grid grid-cols-3 gap-4'>
-          {digits.map(digit => <div key={digit}><button class='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => insertDigit(digit)}>{digit}</button></div>)}
-          <button class='btn h-10 bg-orange-400 text-indigo-800 col-span-2' onClick={handleCalculation}>=</button>
+    <div className='wrapper w-64 mx-auto mt-32 px-6 py-10 rounded'>
+      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800'>{displayedNum}</div>
+      <div className='flex gap-4'>
+        <div className='grid grid-cols-3 gap-4'>
+          {digits.map(digit => <div key={digit}><button className='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => insertDigit(digit)}>{digit}</button></div>)}
+          <button className='btn h-10 bg-orange-400 text-indigo-800 col-span-2' onClick={handleCalculation}>=</button>
         </div>
-        <div class='grid grid-cols-1 gap-4'>
-          {operators.map(operand => <div key={operand}><button class='btn w-10 h-10 bg-indigo-300' onClick={() => insertOperand(operand)}>{operand}</button></div>)}
+        <div className='grid grid-cols-1 gap-4'>
+          {operators.map(operand => <div key={operand}><button className='btn w-10 h-10 bg-indigo-300' onClick={() => insertOperand(operand)}>{operand}</button></div>)}
         </div>
       </div>
     </div>
