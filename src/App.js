@@ -15,19 +15,19 @@ function App() {
 
   function insertDigit(input) {
     setNum(updateNumber(num, input));
+    if (result)
+      setResult();
   }
 
   function insertOperand(input) {
-    const oldO = operations;
-    setOperations(oldO + num + input);
-    setNum(null);
+    setOperations(operations => operations + num + input);
+    setNum();
   }
 
   function handleCalculation() {
-    const oldOperations = operations;
-    setResult(eval(oldOperations + num));
-    setOperations(null);
-    setNum(null);
+    setResult(eval(operations + num));
+    setOperations('');
+    setNum();
   }
 
   return (
