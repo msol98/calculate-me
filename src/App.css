@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind utilities;
+
+.wrapper {
+  border: 1px solid;
+  box-shadow: 20px 20px #464646;
+  font-family: monospace;
+}
+
+.btn {
+  border-radius: 7px;
+  box-shadow: 5px 5px 0px 0px #464646;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.screen {
+  text-align: right;
+  font-weight: bold;
+  box-shadow: inset 5px 5px #5c5c5c;
+}
