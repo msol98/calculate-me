@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import store from './stores/configStore';
 import './App.css';
-import { calculateOperation } from './actions/calculator';
+import { calculateOperation, insertButton } from './actions/calculator';
 import { connect } from 'react-redux';
 
 function App(props) {
@@ -9,7 +9,6 @@ function App(props) {
   var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
   const [num, setNum] = useState();
-  const [displayedNum, setDisplayedNum] = useState(0);
   const [operations, setOperations] = useState('');
 
   function updateNumber(oldNumber, newDigit) {
@@ -17,12 +16,13 @@ function App(props) {
   }
 
   function insertDigit(input) {
+    store.dispatch(insertButton(input));
     const newNum = updateNumber(num, input)
     setNum(newNum);
-    setDisplayedNum(newNum);
   }
 
   function insertOperand(input) {
+    store.dispatch(insertButton(input));
     setOperations(operations => operations + num + input);
     setNum();
   }
