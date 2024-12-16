@@ -1,7 +1,10 @@
 import { useState } from 'react';
+import store from './stores/configStore';
 import './App.css';
+import { calculateOperation } from './actions/calculator';
+import { connect } from 'react-redux';
 
-function App() {
+function App(props) {
   var operators = ['+', '-', '*', '/'];
   var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
@@ -25,14 +28,14 @@ function App() {
   }
 
   function handleCalculation() {
-    setDisplayedNum(eval(operations + num));
+    store.dispatch(calculateOperation(operations + num));
     setOperations('');
     setNum();
   }
 
   return (
     <div className='wrapper w-64 mx-auto mt-32 px-6 py-10 rounded'>
-      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800'>{displayedNum}</div>
+      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800'>{props.displayedNum}</div>
       <div className='flex gap-4'>
         <div className='grid grid-cols-3 gap-4'>
           {digits.map(digit => <div key={digit}><button className='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => insertDigit(digit)}>{digit}</button></div>)}
@@ -46,4 +49,8 @@ function App() {
   );
 }
 
-export default App;
+const mapStateToProps = (state = { displayedNum: 0 }) => ({
+  displayedNum: state.displayedNum
+});
+
+export default connect(mapStateToProps)(App);
