@@ -1,9 +1,9 @@
-export const insertButton = (button) => ({
+export const insertButton = (button, buttonType) => ({
   type: 'INSERT_BUTTON',
-  button
+  button,
+  buttonType
 });
 
-export const calculateOperation = (operation) => ({
-  type: 'CALCULATE',
-  operation
+export const calculateOperation = () => ({
+  type: 'CALCULATE'
 });

@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import store from './stores/configStore';
 import './App.css';
 import { calculateOperation, insertButton } from './actions/calculator';
@@ -8,29 +7,16 @@ function App(props) {
   var operators = ['+', '-', '*', '/'];
   var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  const [num, setNum] = useState();
-  const [operations, setOperations] = useState('');
-
-  function updateNumber(oldNumber, newDigit) {
-    return (oldNumber | 0) * 10 + newDigit;
-  }
-
   function insertDigit(input) {
-    store.dispatch(insertButton(input));
-    const newNum = updateNumber(num, input)
-    setNum(newNum);
+    store.dispatch(insertButton(input, 'digit'));
   }
 
   function insertOperand(input) {
-    store.dispatch(insertButton(input));
-    setOperations(operations => operations + num + input);
-    setNum();
+    store.dispatch(insertButton(input, 'operand'));
   }
 
   function handleCalculation() {
-    store.dispatch(calculateOperation(operations + num));
-    setOperations('');
-    setNum();
+    store.dispatch(calculateOperation());
   }
 
   return (
