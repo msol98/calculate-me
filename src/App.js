@@ -18,7 +18,9 @@ function App(props) {
 
   return (
     <div className='wrapper w-64 mx-auto mt-32 px-6 py-10 rounded'>
-      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800'>{props.displayedNum}</div>
+      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800 relative'>{props.displayedNum}
+        <small className='err'>{props.error}</small>
+      </div>
       <div className='flex gap-4'>
         <div className='grid grid-cols-3 gap-4'>
           {digits.map(digit => <div key={digit}><button className='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => clickButton(digit, ButtonTypes.DIGIT)}>{digit}</button></div>)}
@@ -33,7 +35,8 @@ function App(props) {
 }
 
 const mapStateToProps = (state = { displayedNum: 0 }) => ({
-  displayedNum: state.displayedNum
+  displayedNum: state.displayedNum,
+  error: state.error
 });
 
 export default connect(mapStateToProps)(App);
