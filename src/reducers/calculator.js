@@ -10,7 +10,7 @@ export default (state = { displayedNum: 0, operation: null, lastInsertType: null
       return isValid ? { displayedNum, operation: state.operation + action.button, lastInsertType: action.buttonType } : state;
 
     case 'CALCULATE':
-      return action.lastInsertType !== ButtonTypes.DIGIT ? state : { displayedNum: eval(state.operation), operation: null };
+      return state.lastInsertType === ButtonTypes.DIGIT ? { displayedNum: eval(state.operation), operation: null } : state;
   }
 }
 
