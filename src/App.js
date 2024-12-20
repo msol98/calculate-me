@@ -23,11 +23,11 @@ function App(props) {
       </div>
       <div className='flex gap-4'>
         <div className='grid grid-cols-3 gap-4'>
-          {digits.map(digit => <div key={digit}><button className='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => clickButton(digit, ButtonTypes.DIGIT)}>{digit}</button></div>)}
-          <button className='btn h-10 bg-orange-400 text-indigo-800 col-span-2' onClick={handleCalculation}>=</button>
+          {digits.map(digit => <div key={digit} className='relative w-10 h-10'><button className='btn w-10 h-10 bg-yellow-300 text-indigo-800' onClick={() => clickButton(digit, ButtonTypes.DIGIT)}>{digit}</button></div>)}
+          <div className='relative h-10 col-span-2'><button className='btn h-10 w-full bg-orange-400 text-indigo-800' onClick={handleCalculation}>=</button></div>
         </div>
         <div className='grid grid-cols-1 gap-4'>
-          {operators.map(operand => <div key={operand}><button className='btn w-10 h-10 bg-indigo-300' onClick={() => clickButton(operand, ButtonTypes.OPERAND)}>{operand}</button></div>)}
+          {operators.map(operand => <div key={operand} className='relative w-10 h-10'><button className='btn w-10 h-10 bg-indigo-300' onClick={() => clickButton(operand, ButtonTypes.OPERAND)}>{operand}</button></div>)}
         </div>
       </div>
     </div>
