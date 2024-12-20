@@ -15,10 +15,7 @@ export default (state = { displayedNum: 0, operation: null, lastInsertType: null
 }
 
 function validateInsert(buttonType, lastInsertType) {
-  var isValid = true;
-  if (lastInsertType === ButtonTypes.OPERAND && (buttonType === ButtonTypes.OPERAND))
-    isValid = false;
-  return isValid;
+  return lastInsertType !== ButtonTypes.OPERAND || buttonType !== ButtonTypes.OPERAND; 
 }
 
 function updateNumber(oldNumber, newDigit) {
