@@ -16,7 +16,6 @@
 
 .btn:active {
   box-shadow: 3px 3px 0px 0px #464646;
-  display: block;
   position: absolute;
   right: -2px;
   bottom: -2px;
@@ -30,10 +29,8 @@
 }
 
 .err {
-  position: absolute;
   bottom: 0;
   left: 10px;
   font-size: 10px;
-  color: red;
   line-height: 15px;
 }
