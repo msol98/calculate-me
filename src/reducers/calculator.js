@@ -10,7 +10,7 @@ export default (state = { displayedNum: 0, operation: '', lastInsertType: null, 
       return isValid ? { displayedNum, operation: state.operation + (action.button).toString(), lastInsertType: action.buttonType } : { ...state, error: 'PLEASE INSERT A DIGIT' };
 
     case 'CALCULATE':
-      return state.lastInsertType === ButtonTypes.DIGIT ? { displayedNum: eval(state.operation), operation: null } : { ...state, error: 'PLEASE INSERT A DIGIT' };
+      return state.lastInsertType === ButtonTypes.DIGIT ? { displayedNum: eval(state.operation), operation: '' } : { ...state, error: 'PLEASE INSERT A DIGIT' };
   }
 }
 
