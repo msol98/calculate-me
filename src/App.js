@@ -1,4 +1,3 @@
-import store from './stores/configStore';
 import './App.css';
 import { calculateOperation, insertButton } from './actions/calculator';
 import { ButtonTypes } from "./constants";
@@ -9,11 +8,11 @@ function App(props) {
   var digits = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
   function clickButton(input, buttonType) {
-    store.dispatch(insertButton(input, buttonType));
+    props.dispatch(insertButton(input, buttonType));
   }
 
   function handleCalculation() {
-    store.dispatch(calculateOperation());
+    props.dispatch(calculateOperation());
   }
 
   return (
