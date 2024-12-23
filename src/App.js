@@ -17,7 +17,7 @@ function App(props) {
 
   return (
     <div className='wrapper w-64 mx-auto mt-32 px-6 py-10 rounded'>
-      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800 relative'>{props.displayedNum}
+      <div className='screen mb-7 p-4 h-16 text-xl bg-orange-200 rounded text-indigo-800 relative'>{props.displayedCharacter}
         <small className='err absolute text-red-500'>{props.error}</small>
       </div>
       <div className='flex gap-4'>
@@ -33,8 +33,8 @@ function App(props) {
   );
 }
 
-const mapStateToProps = (state = { displayedNum: 0 }) => ({
-  displayedNum: state.displayedNum,
+const mapStateToProps = (state = { displayedCharacter: 0 }) => ({
+  displayedCharacter: state.displayedCharacter,
   error: state.error
 });
 
