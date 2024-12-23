@@ -15,7 +15,7 @@ export default (state = { displayedCharacter: 0, operation: '', lastInsertType: 
 
     case 'CALCULATE':
       return state.lastInsertType === ButtonTypes.DIGIT ?
-        { displayedCharacter: eval(state.operation), operation: '' } :
+        { displayedCharacter: eval(state.operation), operation: '', lastInsertType: null } :
         { ...state, error: 'PLEASE INSERT A DIGIT' };
   }
 }
