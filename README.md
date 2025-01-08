@@ -1,7 +1,11 @@
 <h1>A minimalistic calculator</h1>
-All written in <b>React.js</b>, and <b>TailwindCSS</b>.
+All written in <b>🚀 React.js</b>, and <b>🚀 TailwindCSS</b>.
 <br/><br/>
-Four main operations (+, -, x, ÷) are supported.
+Tested with <b>🌠 Jest</b> framework.
+<br/><br/>
+Improved using <b>🔥 Reduxt</b> state management
+<br/><br/>
+Supprts four main operations: <b>+, -, x, ÷</b>
 <br/><br/>
 Feel free to clone and fork the project.
 <h2>Preview</h2>
@@ -9,4 +13,3 @@ Feel free to clone and fork the project.
 <h2>Running the Project</h2>
 clone:<br/>
 <code>git clone https://github.com/msol98/calculate-me.git</code>
-
